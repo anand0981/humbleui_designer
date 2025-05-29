@@ -13,8 +13,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-      background-color: #f9f9f9;
+      z-index: -1; /* Keep it behind your content */
+      background-color: #f9f9f9; /* Match your section bg */
     }
     </style>
   </head>
@@ -41,13 +41,13 @@
   <section class="hero">
     <div id="tsparticles"></div>
     <div class="profile-image">
-      <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Profile" />
+      <img src="Images/dp.png" alt="Anand's DP" />
     </div>
 
     <div class="intro">Hi, I'm Humble_UI_Designer</div>
 
     <h1 class="hero-heading">
-      Let's Create Something <br> Amazing Together
+      Let’s Create Something <br> Amazing Together
       I Love <br>
       <span id="typed-text"></span><span class="cursor">|</span>
     </h1>
@@ -58,50 +58,188 @@
     <div class="scroll-indicator">
       <span></span>
     </div>
+
   </section>
 
-  <!-- Services Section -->
+  <!-- JS for Hamburger & Typewriter -->
+  
+ <script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+
+
+    const phrases = [
+      "Making Beautiful Interfaces",
+      "Creating Awesome Designs",
+      "Creating User-Centric Experiences"
+    ];
+    const el = document.getElementById("typed-text");
+    const cursor = document.querySelector(".cursor");
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let currentPhrase = "";
+    let isDeleting = false;
+
+    function type() {
+      currentPhrase = phrases[phraseIndex];
+      if (isDeleting) {
+        el.textContent = currentPhrase.substring(0, letterIndex--);
+      } else {
+        el.textContent = currentPhrase.substring(0, letterIndex++);
+      }
+
+      if (!isDeleting && letterIndex === currentPhrase.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    type();
+
+    
+  </script>
+
+<script>
+  function handleParallax() {
+    const cards = document.querySelectorAll('.service-card');
+
+    if (window.innerWidth > 768) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        cards.forEach((card, index) => {
+          const offset = (index % 2 === 0 ? 1 : -1) * (scrollY * 0.03);
+          card.style.transform = `translateY(${offset}px)`; // FIXED: Added backticks
+        });
+      });
+    }
+  }
+
+  window.addEventListener('load', handleParallax);
+  window.addEventListener('resize', handleParallax);
+</script>
+
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const dot = document.createElement('div');
+    dot.classList.add('trail-dot');
+    dot.style.left = `${e.clientX}px`; // FIXED: use backticks
+    dot.style.top = `${e.clientY}px`;  // FIXED: use backticks
+    document.body.appendChild(dot);
+
+    setTimeout(() => {
+      dot.remove();
+    }, 100); // fades quicker
+  });
+</script>
+
+
+  
   <section id="services">
-    <h2 class="ses-heading">My Services</h2>
+    
+      <h2 class="ses-heading">My Services</h2>
     <h1 class="ses-cont">Your Vision, My Design <br>
       Let's Build Something Amazing</h1>
-    <div class="my-services-wrapper">
+      <div class="my-services-wrapper">
       <div class="service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055666.png" alt="UI/UX Icon" class="card-icon" />
+        <img src="Images/ui.png" alt="UI/UX Icon" class="card-icon" />
         <h3>UI/UX</h3>
         <p>Designing intuitive, efficient, and easy-to-use interfaces.</p>
       </div>
       <div class="service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/681/681662.png" alt="Revamp Icon" class="card-icon" />
+        <img src="Images/design.png" alt="Revamp Icon" class="card-icon" />
         <h3>Design Revamp</h3>
         <p>Transform ideas into stunning mobile or web experiences.</p>
       </div>
       <div class="service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1087/1087927.png" alt="Consultation Icon" class="card-icon" />
+        <img src="Images/conslt.png" alt="Consultation Icon" class="card-icon" />
         <h3>Design Consultation</h3>
         <p>A modern UI can change how users experience your product.</p>
       </div>
       <div class="service-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1205/1205526.png" alt="Mentoring Icon" class="card-icon" />
+        <img src="Images/mntr.png" alt="Mentoring Icon" class="card-icon" />
         <h3>Design Mentoring</h3>
-        <p>I'll help you grow in your design journey with real-world guidance.</p>
+        <p>I’ll help you grow in your design journey with real-world guidance.</p>
       </div>
     </div>
   </section>
-
-  <!-- Projects Section -->
   <section class="project-section">
     <div class="project-section-title">
       <p class="ses-heading">My Projects</p>
       <h1 class="ses-cont">Bringing Designs to Life –<br>Explore My Work</h1>
     </div>
-    <!-- Project cards here -->
-  </section>
+  
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="Images/anti.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Anti Drug Pledge Website</h3>
+        <p class="project-description">
+          Designed a clean, engaging, and user-friendly interface for GTech’s Anti-Drug Pledge Website, encouraging professionals and students to take a stand against substance abuse.
+        </p>
+        <p class="project-description">
+          <strong>About GTech:</strong> A consortium of CEOs & executives from Technopark-based companies, driving innovation and social responsibility initiatives.
+        </p>
+        <a href="https://drugfreekerala.com" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="Images/consltncy.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Abroad Educational Consultant Web </h3>
+        <p class="project-description">
+          The International Academy Abroad is an educational consultancy that assists students in securing admissions to prestigious universities worldwide. The client required a modern, user-friendly redesign of their existing landing page to improve user engagement, streamline navigation, and enhance the overall visual appeal.</p>
+        <p class="project-description">
+          <strong>About Client:</strong> An educational consultancy its just a template for there web developers
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="Images/health.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">HealthyLink Web Landing Page</h3>
+        <p class="project-description">
+          HealthyLink aims to bridge the gap between patients and healthcare providers, offering seamless access to appointments, medical records, and remote consultations.
+        </p>
+        <p class="project-description">
+          <strong>About HealthyLink</strong> US based Project for hospital appoinment booking i have done the research and design part of the project
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="Images/meat.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Meatery</h3>
+        <p class="project-description">
+          Meatery is a mobile app designed to streamline the online meat shopping experience, offering fresh, high-quality meat products delivered straight to customers' doorsteps. The goal was to create an intuitive, visually appealing, and user-friendly interface that enhances the online meat-buying journey while ensuring trust, convenience, and efficiency.
+        </p>
+        <p class="project-description">
+          <strong>About Meatery:</strong> One of my friend a freelance developer requested to design this app according to wireframe provided by him. Actual client is from UAE details not available for me.
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="Images/tulip.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Tulips a conceptual project</h3>
+        <p class="project-description">
+        Tulips a project i have done for students learning flutter and Mobile App. development. The project is based on beauty and cosmetic theme.
+        </p>
+        <p class="project-description">
+          <strong>About Tulips</strong>A conceptual project for Students,Client is actually a flutter developer who is a mentor for students learning flutter 
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
 
-  <!-- Logo Marquee Section -->
-  <section class="logo-marquee">
-    <div class="logo-track">
-      <!-- Logos here -->
+      </div>
     </div>
   </section>
 
