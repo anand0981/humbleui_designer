@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Anand Narayanan</title>
+    <style>#tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: #f9f9f9;
+    }
+    </style>
+  </head>
+  
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <header class="header">
+    <div class="logo">Anand Narayanan</div>
+  
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  
+    <!-- Navigation -->
+    <nav class="nav" id="mobileNav">
+      <a href="#">LinkedIn</a>
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="https://wa.me/919645754762?text=Hi%20Anand%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect!" class="btn">Drop a Message</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div id="tsparticles"></div>
+    <div class="profile-image">
+      <img src="Images/dp.png" alt="Anand's DP" />
+    </div>
+
+    <div class="intro">Hi, I'm Humble_UI_Designer</div>
+
+    <h1 class="hero-heading">
+      Let's Create Something <br> Amazing Together
+      I Love <br>
+      <span id="typed-text"></span><span class="cursor">|</span>
+    </h1>
+
+    <a href="https://www.behance.net/anandn4" class="cta-button">View Portfolio</a>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2 class="ses-heading">My Services</h2>
+    <h1 class="ses-cont">Your Vision, My Design <br>
+      Let's Build Something Amazing</h1>
+    <div class="my-services-wrapper">
+      <div class="service-card">
+        <img src="Images/ui.png" alt="UI/UX Icon" class="card-icon" />
+        <h3>UI/UX</h3>
+        <p>Designing intuitive, efficient, and easy-to-use interfaces.</p>
+      </div>
+      <div class="service-card">
+        <img src="Images/design.png" alt="Revamp Icon" class="card-icon" />
+        <h3>Design Revamp</h3>
+        <p>Transform ideas into stunning mobile or web experiences.</p>
+      </div>
+      <div class="service-card">
+        <img src="Images/conslt.png" alt="Consultation Icon" class="card-icon" />
+        <h3>Design Consultation</h3>
+        <p>A modern UI can change how users experience your product.</p>
+      </div>
+      <div class="service-card">
+        <img src="Images/mntr.png" alt="Mentoring Icon" class="card-icon" />
+        <h3>Design Mentoring</h3>
+        <p>I'll help you grow in your design journey with real-world guidance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="project-section">
+    <div class="project-section-title">
+      <p class="ses-heading">My Projects</p>
+      <h1 class="ses-cont">Bringing Designs to Life –<br>Explore My Work</h1>
+    </div>
+    <!-- Project cards here -->
+  </section>
+
+  <!-- Logo Marquee Section -->
+  <section class="logo-marquee">
+    <div class="logo-track">
+      <!-- Logos here -->
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h4 class="testimonial-label">Testimonials</h4>
+    <h2 class="testimonial-heading">What Clients Say</h2>
+    
+    <div class="testimonial-container">
+      <div class="testimonial-track">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Working with Anand was a pleasure. His attention to detail and creative approach brought our vision to life perfectly."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" alt="Client" />
+            <div class="author-info">
+              <h4>John Smith</h4>
+              <p>CEO, TechStart</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"The UI/UX design exceeded our expectations. Anand's work significantly improved our user engagement."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Client" />
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>Product Manager, InnovateCo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Exceptional design work! Anand's expertise and professionalism made the entire process smooth and enjoyable."</p>
+          </div>
+          <div class="testimonial-author">
+            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Client" />
+            <div class="author-info">
+              <h4>Mike Anderson</h4>
+              <p>Founder, DesignLab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h4 class="contact-label">Contact</h4>
+    <h2 class="contact-heading">Interested in working together<br>or discussing a project?</h2>
+    <div class="contact-buttons">
+      <a href="mailto:anandnofficial@gmail.com" class="btn light">Drop a mail</a>
+      <a href="https://wa.me/919645754762" target="_blank" class="btn dark">WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>Made with ❤️ by Anand Narayanan</p>
+      <p>Powered by ChatGPT</p>
+      <p>© 2025 All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: {
+          value: 10,
+          density: {
+            enable: true,
+            area: 800
+          }
+        },
+        shape: {
+          type: "image",
+          image: [
+            { src: "Images/1.png", width: 32, height: 32 },
+            { src: "Images/2.png", width: 32, height: 32 },
+            { src: "Images/3.png", width: 32, height: 32 },
+            { src: "Images/4.png", width: 32, height: 32 },
+            { src: "Images/5.png", width: 32, height: 32 },
+            { src: "Images/6.png", width: 32, height: 32 }
+          ]
+        },
+        opacity: {
+          value: 0.3
+        },
+        size: {
+          value: 18,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outModes: {
+            default: "out"
+          }
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 60,
+            duration: 0.8
+          }
+        }
+      },
+      background: {
+        color: "#ffffff"
+      },
+      detectRetina: true
+    });
+  </script>
+</body>
+</html>
