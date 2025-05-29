@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Previous head content remains unchanged -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
     <title>Anand Narayanan</title>
     <style>#tsparticles {
@@ -14,42 +12,238 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-      background-color: #f9f9f9;
+      z-index: -1; /* Keep it behind your content */
+      background-color: #f9f9f9; /* Match your section bg */
     }
     </style>
+    <link rel="stylesheet" crossorigin href="/assets/index-DCUtjRs-.css">
   </head>
   
 <body>
-  <!-- Previous content remains unchanged until logo-marquee section -->
-  
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <header class="header">
-    <!-- Header content remains unchanged -->
+    <div class="logo">Anand Narayanan</div>
+  
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  
+    <!-- Navigation -->
+    <nav class="nav" id="mobileNav">
+      <a href="#">LinkedIn</a>
+      <a href="#">Behance</a>
+      <a href="#">Instagram</a>
+      <a href="https://wa.me/919645754762?text=Hi%20Anand%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect!" class="btn">Drop a Message</a>
+    </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <!-- Hero content remains unchanged -->
+    <div id="tsparticles"></div>
+    <div class="profile-image">
+      <img src="/assets/dp-Dp7J4Lf5.png" alt="Anand's DP" />
+    </div>
+
+    <div class="intro">Hi, I'm Humble_UI_Designer</div>
+
+    <h1 class="hero-heading">
+      Let’s Create Something <br> Amazing Together
+      I Love <br>
+      <span id="typed-text"></span><span class="cursor">|</span>
+    </h1>
+
+    <a href="https://www.behance.net/anandn4" class="cta-button">View Portfolio</a>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span></span>
+    </div>
+
   </section>
 
-  <!-- Services Section -->
+  <!-- JS for Hamburger & Typewriter -->
+  
+ <script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('active');
+  }
+
+
+    const phrases = [
+      "Making Beautiful Interfaces",
+      "Creating Awesome Designs",
+      "Creating User-Centric Experiences"
+    ];
+    const el = document.getElementById("typed-text");
+    const cursor = document.querySelector(".cursor");
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let currentPhrase = "";
+    let isDeleting = false;
+
+    function type() {
+      currentPhrase = phrases[phraseIndex];
+      if (isDeleting) {
+        el.textContent = currentPhrase.substring(0, letterIndex--);
+      } else {
+        el.textContent = currentPhrase.substring(0, letterIndex++);
+      }
+
+      if (!isDeleting && letterIndex === currentPhrase.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    type();
+
+    
+  </script>
+
+<script>
+  function handleParallax() {
+    const cards = document.querySelectorAll('.service-card');
+
+    if (window.innerWidth > 768) {
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        cards.forEach((card, index) => {
+          const offset = (index % 2 === 0 ? 1 : -1) * (scrollY * 0.03);
+          card.style.transform = `translateY(${offset}px)`; // FIXED: Added backticks
+        });
+      });
+    }
+  }
+
+  window.addEventListener('load', handleParallax);
+  window.addEventListener('resize', handleParallax);
+</script>
+
+
+<script>
+  document.addEventListener('mousemove', (e) => {
+    const dot = document.createElement('div');
+    dot.classList.add('trail-dot');
+    dot.style.left = `${e.clientX}px`; // FIXED: use backticks
+    dot.style.top = `${e.clientY}px`;  // FIXED: use backticks
+    document.body.appendChild(dot);
+
+    setTimeout(() => {
+      dot.remove();
+    }, 100); // fades quicker
+  });
+</script>
+
+
+  
   <section id="services">
-    <!-- Services content remains unchanged -->
+    
+      <h2 class="ses-heading">My Services</h2>
+    <h1 class="ses-cont">Your Vision, My Design <br>
+      Let's Build Something Amazing</h1>
+      <div class="my-services-wrapper">
+      <div class="service-card">
+        <img src="data:image/png;base64,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" alt="UI/UX Icon" class="card-icon" />
+        <h3>UI/UX</h3>
+        <p>Designing intuitive, efficient, and easy-to-use interfaces.</p>
+      </div>
+      <div class="service-card">
+        <img src="data:image/png;base64,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" alt="Revamp Icon" class="card-icon" />
+        <h3>Design Revamp</h3>
+        <p>Transform ideas into stunning mobile or web experiences.</p>
+      </div>
+      <div class="service-card">
+        <img src="data:image/png;base64,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" alt="Consultation Icon" class="card-icon" />
+        <h3>Design Consultation</h3>
+        <p>A modern UI can change how users experience your product.</p>
+      </div>
+      <div class="service-card">
+        <img src="data:image/png;base64,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" alt="Mentoring Icon" class="card-icon" />
+        <h3>Design Mentoring</h3>
+        <p>I’ll help you grow in your design journey with real-world guidance.</p>
+      </div>
+    </div>
   </section>
-
-  <!-- Projects Section -->
   <section class="project-section">
-    <!-- Projects content remains unchanged -->
+    <div class="project-section-title">
+      <p class="ses-heading">My Projects</p>
+      <h1 class="ses-cont">Bringing Designs to Life –<br>Explore My Work</h1>
+    </div>
+  
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="/assets/anti-D1l36cYN.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Anti Drug Pledge Website</h3>
+        <p class="project-description">
+          Designed a clean, engaging, and user-friendly interface for GTech’s Anti-Drug Pledge Website, encouraging professionals and students to take a stand against substance abuse.
+        </p>
+        <p class="project-description">
+          <strong>About GTech:</strong> A consortium of CEOs & executives from Technopark-based companies, driving innovation and social responsibility initiatives.
+        </p>
+        <a href="https://drugfreekerala.com" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="/assets/consltncy-Cni5N-Yt.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Abroad Educational Consultant Web </h3>
+        <p class="project-description">
+          The International Academy Abroad is an educational consultancy that assists students in securing admissions to prestigious universities worldwide. The client required a modern, user-friendly redesign of their existing landing page to improve user engagement, streamline navigation, and enhance the overall visual appeal.</p>
+        <p class="project-description">
+          <strong>About Client:</strong> An educational consultancy its just a template for there web developers
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="/assets/health-PLZ9ZEuO.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">HealthyLink Web Landing Page</h3>
+        <p class="project-description">
+          HealthyLink aims to bridge the gap between patients and healthcare providers, offering seamless access to appointments, medical records, and remote consultations.
+        </p>
+        <p class="project-description">
+          <strong>About HealthyLink</strong> US based Project for hospital appoinment booking i have done the research and design part of the project
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="/assets/meat-fWmBF_tD.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Meatery</h3>
+        <p class="project-description">
+          Meatery is a mobile app designed to streamline the online meat shopping experience, offering fresh, high-quality meat products delivered straight to customers' doorsteps. The goal was to create an intuitive, visually appealing, and user-friendly interface that enhances the online meat-buying journey while ensuring trust, convenience, and efficiency.
+        </p>
+        <p class="project-description">
+          <strong>About Meatery:</strong> One of my friend a freelance developer requested to design this app according to wireframe provided by him. Actual client is from UAE details not available for me.
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+      </div>
+    </div>
+    <div class="project-card" data-aos="fade-up">
+      <div class="project-image"> <img src="/assets/tulip-B40Lext4.png"></div>
+      <div class="project-content">
+        <h3 class="project-title">Tulips a conceptual project</h3>
+        <p class="project-description">
+        Tulips a project i have done for students learning flutter and Mobile App. development. The project is based on beauty and cosmetic theme.
+        </p>
+        <p class="project-description">
+          <strong>About Tulips</strong>A conceptual project for Students,Client is actually a flutter developer who is a mentor for students learning flutter 
+        </p>
+        <a href="#" class="view-project-btn">View Project ↗</a>
+
+      </div>
+    </div>
   </section>
 
-  <!-- Logo Marquee Section -->
-  <section class="logo-marquee">
-    <!-- Logo marquee content remains unchanged -->
-  </section>
-
-  <!-- New Testimonial Section -->
+  <!-- Testimonials Section -->
   <section class="testimonials">
     <h4 class="testimonial-label">Testimonials</h4>
     <h2 class="testimonial-heading">What Clients Say</h2>
@@ -100,16 +294,79 @@
 
   <!-- Contact Section -->
   <section class="contact-section">
-    <!-- Contact content remains unchanged -->
+    <h4 class="contact-label">Contact</h4>
+    <h2 class="contact-heading">Interested in working together<br>or discussing a project?</h2>
+    <div class="contact-buttons">
+      <a href="mailto:anandnofficial@gmail.com" class="btn light">Drop a mail</a>
+      <a href="https://wa.me/919645754762" target="_blank" class="btn dark">WhatsApp</a>
+    </div>
   </section>
 
   <footer class="site-footer">
-    <!-- Footer content remains unchanged -->
+    <div class="footer-inner">
+      <p>Made with ❤️ by Anand Narayanan</p>
+      <p>Powered by ChatGPT</p>
+      <p>© 2025 All rights reserved</p>
+    </div>
   </footer>
 
-  <!-- Previous scripts remain unchanged -->
   <script>
-    // Previous scripts remain unchanged
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: {
+          value: 10,
+          density: {
+            enable: true,
+            area: 800
+          }
+        },
+        shape: {
+          type: "image",
+          image: [
+            { src: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/681/681662.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/1087/1087927.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/1205/1205526.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png", width: 32, height: 32 },
+            { src: "https://cdn-icons-png.flaticon.com/512/681/681662.png", width: 32, height: 32 }
+          ]
+        },
+        opacity: {
+          value: 0.3
+        },
+        size: {
+          value: 18,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "none",
+          outModes: {
+            default: "out"
+          }
+        }
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 60,
+            duration: 0.8
+          }
+        }
+      },
+      background: {
+        color: "#ffffff"
+      },
+      detectRetina: true
+    });
   </script>
 </body>
 </html>
