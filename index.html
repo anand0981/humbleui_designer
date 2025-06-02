@@ -13,8 +13,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1; /* Keep it behind your content */
-      background-color: #f9f9f9; /* Match your section bg */
+      z-index: -1;
+      background-color: #f9f9f9;
     }
     </style>
   </head>
@@ -24,11 +24,7 @@
 
   <header class="header">
     <div class="logo">Anand Narayanan</div>
-  
-    <!-- Hamburger -->
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-  
-    <!-- Navigation -->
     <nav class="nav" id="mobileNav">
       <a href="https://www.linkedin.com/in/anand-n-239b41218/">LinkedIn</a>
       <a href="https://www.behance.net/anandn4">Behance</a>
@@ -37,7 +33,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div id="tsparticles"></div>
     <div class="profile-image">
@@ -47,107 +42,23 @@
     <div class="intro">Hi, I'm Humble_UI_Designer</div>
 
     <h1 class="hero-heading">
-      Let’s Create Something <br> Amazing Together
+      Let's Create Something <br> Amazing Together
       I Love <br>
       <span id="typed-text"></span><span class="cursor">|</span>
     </h1>
 
     <a href="https://www.behance.net/anandn4" class="cta-button">View Portfolio</a>
 
-    <!-- Scroll Indicator -->
     <div class="scroll-indicator">
       <span></span>
     </div>
-
   </section>
-
-  <!-- JS for Hamburger & Typewriter -->
-  
- <script>
-  function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    nav.classList.toggle('active');
-  }
-
-
-    const phrases = [
-      "Making Beautiful Interfaces",
-      "Creating Awesome Designs",
-      "Creating User-Centric Experiences"
-    ];
-    const el = document.getElementById("typed-text");
-    const cursor = document.querySelector(".cursor");
-    let phraseIndex = 0;
-    let letterIndex = 0;
-    let currentPhrase = "";
-    let isDeleting = false;
-
-    function type() {
-      currentPhrase = phrases[phraseIndex];
-      if (isDeleting) {
-        el.textContent = currentPhrase.substring(0, letterIndex--);
-      } else {
-        el.textContent = currentPhrase.substring(0, letterIndex++);
-      }
-
-      if (!isDeleting && letterIndex === currentPhrase.length) {
-        setTimeout(() => isDeleting = true, 1000);
-      } else if (isDeleting && letterIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-      }
-
-      setTimeout(type, isDeleting ? 50 : 100);
-    }
-
-    type();
-
-    
-  </script>
-
-<script>
-  function handleParallax() {
-    const cards = document.querySelectorAll('.service-card');
-
-    if (window.innerWidth > 768) {
-      window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-
-        cards.forEach((card, index) => {
-          const offset = (index % 2 === 0 ? 1 : -1) * (scrollY * 0.03);
-          card.style.transform = `translateY(${offset}px)`; // FIXED: Added backticks
-        });
-      });
-    }
-  }
-
-  window.addEventListener('load', handleParallax);
-  window.addEventListener('resize', handleParallax);
-</script>
-
-
-<script>
-  document.addEventListener('mousemove', (e) => {
-    const dot = document.createElement('div');
-    dot.classList.add('trail-dot');
-    dot.style.left = `${e.clientX}px`; // FIXED: use backticks
-    dot.style.top = `${e.clientY}px`;  // FIXED: use backticks
-    document.body.appendChild(dot);
-
-    setTimeout(() => {
-      dot.remove();
-    }, 100); // fades quicker
-  });
-</script>
-
-
   
   <section id="services">
-    
-      <h2 class="ses-heading">My Services</h2>
+    <h2 class="ses-heading">My Services</h2>
     <h1 class="ses-cont">Your Vision, My Design <br>
       Let's Build Something Amazing</h1>
-      <div class="my-services-wrapper">
+    <div class="my-services-wrapper">
       <div class="service-card">
         <img src="Images/ui.png" alt="UI/UX Icon" class="card-icon" />
         <h3>UI/UX</h3>
@@ -166,10 +77,11 @@
       <div class="service-card">
         <img src="Images/mntr.png" alt="Mentoring Icon" class="card-icon" />
         <h3>Design Mentoring</h3>
-        <p>I’ll help you grow in your design journey with real-world guidance.</p>
+        <p>I'll help you grow in your design journey with real-world guidance.</p>
       </div>
     </div>
   </section>
+
   <section class="project-section">
     <div class="project-section-title">
       <p class="ses-heading">My Projects</p>
@@ -181,7 +93,7 @@
       <div class="project-content">
         <h3 class="project-title">Anti Drug Pledge Website</h3>
         <p class="project-description">
-          Designed a clean, engaging, and user-friendly interface for GTech’s Anti-Drug Pledge Website, encouraging professionals and students to take a stand against substance abuse.
+          Designed a clean, engaging, and user-friendly interface for GTech's Anti-Drug Pledge Website, encouraging professionals and students to take a stand against substance abuse.
         </p>
         <p class="project-description">
           <strong>About GTech:</strong> A consortium of CEOs & executives from Technopark-based companies, driving innovation and social responsibility initiatives.
@@ -238,12 +150,10 @@
           <strong>About Tulips</strong>A conceptual project for Students,Client is actually a flutter developer who is a mentor for students learning flutter 
         </p>
         <a href="#" class="view-project-btn">View Project ↗</a>
-
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
   <section class="testimonials">
     <h4 class="testimonial-label">Testimonials</h4>
     <h2 class="testimonial-heading">What Clients Say</h2>
@@ -278,7 +188,7 @@
 
         <div class="testimonial-card">
           <div class="testimonial-content">
-            <p>"Anand sir's mentorship was a game-changer in my UI/UX learning phase. He pushed my UI/UX skills further in weeks than I could’ve alone in months. His blend of expertise, patience, and advices are unmatched."</p>
+            <p>"Anand sir's mentorship was a game-changer in my UI/UX learning phase. He pushed my UI/UX skills further in weeks than I could've alone in months. His blend of expertise, patience, and advices are unmatched."</p>
           </div>
           <div class="testimonial-author">
             <img src="Images/amal.jpg" alt="Client" />
@@ -292,7 +202,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact-section">
     <h4 class="contact-label">Contact</h4>
     <h2 class="contact-heading">Interested in working together<br>or discussing a project?</h2>
@@ -311,6 +220,78 @@
   </footer>
 
   <script>
+    const phrases = [
+      "Making Beautiful Interfaces",
+      "Creating Awesome Designs", 
+      "Creating User-Centric Experiences"
+    ];
+    const el = document.getElementById("typed-text");
+    const cursor = document.querySelector(".cursor");
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let currentPhrase = "";
+    let isDeleting = false;
+
+    function type() {
+      currentPhrase = phrases[phraseIndex];
+      if (isDeleting) {
+        el.textContent = currentPhrase.substring(0, letterIndex--);
+      } else {
+        el.textContent = currentPhrase.substring(0, letterIndex++);
+      }
+
+      if (!isDeleting && letterIndex === currentPhrase.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+      }
+
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+
+    type();
+
+    function handleParallax() {
+      const cards = document.querySelectorAll('.service-card');
+      let ticking = false;
+
+      function updateParallax() {
+        const scrollY = window.scrollY;
+        cards.forEach((card, index) => {
+          const offset = (index % 2 === 0 ? 1 : -1) * (scrollY * 0.03);
+          card.style.transform = `translateY(${offset}px)`;
+        });
+        ticking = false;
+      }
+
+      if (window.innerWidth > 768) {
+        window.addEventListener('scroll', () => {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              updateParallax();
+            });
+            ticking = true;
+          }
+        });
+      }
+    }
+
+    window.addEventListener('load', handleParallax);
+    window.addEventListener('resize', handleParallax);
+
+    document.addEventListener('mousemove', (e) => {
+      const dot = document.createElement('div');
+      dot.classList.add('trail-dot');
+      dot.style.left = `${e.clientX}px`;
+      dot.style.top = `${e.clientY}px`;
+      document.body.appendChild(dot);
+
+      setTimeout(() => {
+        dot.remove();
+      }, 100);
+    });
+
     tsParticles.load("tsparticles", {
       particles: {
         number: {
@@ -367,6 +348,11 @@
       },
       detectRetina: true
     });
+
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
