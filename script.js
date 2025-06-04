@@ -33,13 +33,7 @@ function typeEffect() {
 
 typeEffect();
 
-// === Locomotive Scroll ===
-const scroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true
-});
-
-// Mouse pointer effect
+// Mouse pointer effect with colorful smoke
 document.addEventListener('DOMContentLoaded', () => {
   const cursorDot = document.createElement('div');
   const cursorOutline = document.createElement('div');
@@ -53,54 +47,65 @@ document.addEventListener('DOMContentLoaded', () => {
   let cursorVisible = true;
   let cursorEnlarged = false;
   
-  const endX = window.innerWidth / 2;
-  const endY = window.innerHeight / 2;
+  const colors = [
+    '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', 
+    '#ffeead', '#ff9999', '#99ccff', '#ff99cc'
+  ];
   
-  let distanceX = 0;
-  let distanceY = 0;
-  
-  let mouseX = endX;
-  let mouseY = endY;
-  
-  function toggleCursorVisibility() {
-    if (cursorVisible) {
-      cursorDot.style.opacity = 1;
-      cursorOutline.style.opacity = 1;
-    } else {
-      cursorDot.style.opacity = 0;
-      cursorOutline.style.opacity = 0;
-    }
+  function createSmokeParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'smoke-trail';
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    document.body.appendChild(particle);
+    
+    setTimeout(() => {
+      particle.remove();
+    }, 1000);
   }
   
-  function toggleCursorSize() {
-    if (cursorEnlarged) {
-      cursorDot.style.transform = 'translate(-50%, -50%) scale(0.7)';
-      cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    } else {
-      cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-      cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-    }
-  }
+  let lastX = 0;
+  let lastY = 0;
+  let throttleTimer;
   
   function mousemoveHandler(e) {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+    const x = e.clientX;
+    const y = e.clientY;
     
-    cursorDot.style.left = mouseX + 'px';
-    cursorDot.style.top = mouseY + 'px';
+    cursorDot.style.left = x + 'px';
+    cursorDot.style.top = y + 'px';
+    cursorOutline.style.left = x + 'px';
+    cursorOutline.style.top = y + 'px';
     
-    cursorOutline.style.left = mouseX + 'px';
-    cursorOutline.style.top = mouseY + 'px';
+    // Create smoke effect with throttling
+    if (!throttleTimer) {
+      throttleTimer = setTimeout(() => {
+        const distance = Math.sqrt(
+          Math.pow(x - lastX, 2) + Math.pow(y - lastY, 2)
+        );
+        
+        if (distance > 5) {
+          createSmokeParticle(x, y);
+          lastX = x;
+          lastY = y;
+        }
+        
+        throttleTimer = null;
+      }, 50);
+    }
   }
   
   function mouseenterHandler() {
     cursorVisible = true;
-    toggleCursorVisibility();
+    cursorDot.style.opacity = 1;
+    cursorOutline.style.opacity = 1;
   }
   
   function mouseleaveHandler() {
     cursorVisible = false;
-    toggleCursorVisibility();
+    cursorDot.style.opacity = 0;
+    cursorOutline.style.opacity = 0;
   }
   
   document.addEventListener('mousemove', mousemoveHandler);
@@ -114,14 +119,22 @@ document.addEventListener('DOMContentLoaded', () => {
   clickables.forEach((el) => {
     el.addEventListener('mouseover', () => {
       cursorEnlarged = true;
-      toggleCursorSize();
+      cursorDot.style.transform = 'translate(-50%, -50%) scale(0.7)';
+      cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
     });
     
     el.addEventListener('mouseout', () => {
       cursorEnlarged = false;
-      toggleCursorSize();
+      cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
     });
   });
+});
+
+// === Locomotive Scroll ===
+const scroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
 });
 
 const btns = document.querySelectorAll(".btn");

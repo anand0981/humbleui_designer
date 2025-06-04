@@ -442,13 +442,35 @@ body {
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: #000;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
 }
 
 .cursor-dot-outline {
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.smoke-trail {
+  position: fixed;
+  pointer-events: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  animation: smokeEffect 1s ease-out forwards;
+  z-index: 9998;
+}
+
+@keyframes smokeEffect {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(3) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 /* Testimonials Section */
