@@ -1,327 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
-    <title>Anand Narayanan</title>
-    <style>#tsparticles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-color: #f9f9f9;
-    }
-    </style>
-  </head>
-  
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio - Creative Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/me.png">
+    <meta name="description" content="Creative UX/UI Designer Portfolio">
+</head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
-
-  <header class="header">
-    <div class="logo">Anand Narayanan</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav class="nav" id="mobileNav">
-      <a href="https://www.linkedin.com/in/anand-n-239b41218/">LinkedIn</a>
-      <a href="https://www.behance.net/anandn4">Behance</a>
-      <a href="https://www.instagram.com/anandneswar?igsh=MTFsOHgxYWgyaTBqMQ==">Instagram</a>
-      <a href="https://wa.me/919645754762?text=Hi%20Anand%2C%20I%20saw%20your%20portfolio%20and%20wanted%20to%20connect!" class="btn">Drop a Message</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div id="tsparticles"></div>
-    <div class="profile-image">
-      <img src="Images/dp.png" alt="Anand's DP" />
-    </div>
-
-    <div class="intro">Hi, I'm Humble_UI_Designer</div>
-
-    <h1 class="hero-heading">
-      Let's Create Something <br> Amazing Together
-      I Love <br>
-      <span id="typed-text"></span><span class="cursor">|</span>
-    </h1>
-
-    <a href="https://www.behance.net/anandn4" class="cta-button">View Portfolio</a>
-
-    <div class="scroll-indicator">
-      <span></span>
-    </div>
-  </section>
-  
-  <section id="services">
-    <h2 class="ses-heading">My Services</h2>
-    <h1 class="ses-cont">Your Vision, My Design <br>
-      Let's Build Something Amazing</h1>
-    <div class="my-services-wrapper">
-      <div class="service-card">
-        <img src="Images/ui.png" alt="UI/UX Icon" class="card-icon" />
-        <h3>UI/UX</h3>
-        <p>Designing intuitive, efficient, and easy-to-use interfaces.</p>
-      </div>
-      <div class="service-card">
-        <img src="Images/design.png" alt="Revamp Icon" class="card-icon" />
-        <h3>Design Revamp</h3>
-        <p>Transform ideas into stunning mobile or web experiences.</p>
-      </div>
-      <div class="service-card">
-        <img src="Images/conslt.png" alt="Consultation Icon" class="card-icon" />
-        <h3>Design Consultation</h3>
-        <p>A modern UI can change how users experience your product.</p>
-      </div>
-      <div class="service-card">
-        <img src="Images/mntr.png" alt="Mentoring Icon" class="card-icon" />
-        <h3>Design Mentoring</h3>
-        <p>I'll help you grow in your design journey with real-world guidance.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="project-section">
-    <div class="project-section-title">
-      <p class="ses-heading">My Projects</p>
-      <h1 class="ses-cont">Bringing Designs to Life –<br>Explore My Work</h1>
-    </div>
-  
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image"> <img src="Images/anti.png"></div>
-      <div class="project-content">
-        <h3 class="project-title">Anti Drug Pledge Website</h3>
-        <p class="project-description">
-          Designed a clean, engaging, and user-friendly interface for GTech's Anti-Drug Pledge Website, encouraging professionals and students to take a stand against substance abuse.
-        </p>
-        <p class="project-description">
-          <strong>About GTech:</strong> A consortium of CEOs & executives from Technopark-based companies, driving innovation and social responsibility initiatives.
-        </p>
-        <a href="https://drugfreekerala.com" class="view-project-btn">View Project ↗</a>
-      </div>
-    </div>
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image"> <img src="Images/consltncy.png"></div>
-      <div class="project-content">
-        <h3 class="project-title">Abroad Educational Consultant Web </h3>
-        <p class="project-description">
-          The International Academy Abroad is an educational consultancy that assists students in securing admissions to prestigious universities worldwide. The client required a modern, user-friendly redesign of their existing landing page to improve user engagement, streamline navigation, and enhance the overall visual appeal.</p>
-        <p class="project-description">
-          <strong>About Client:</strong> An educational consultancy its just a template for there web developers
-        </p>
-        <a href="#" class="view-project-btn">View Project ↗</a>
-      </div>
-    </div>
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image"> <img src="Images/health.png"></div>
-      <div class="project-content">
-        <h3 class="project-title">HealthyLink Web Landing Page</h3>
-        <p class="project-description">
-          HealthyLink aims to bridge the gap between patients and healthcare providers, offering seamless access to appointments, medical records, and remote consultations.
-        </p>
-        <p class="project-description">
-          <strong>About HealthyLink</strong> US based Project for hospital appoinment booking i have done the research and design part of the project
-        </p>
-        <a href="#" class="view-project-btn">View Project ↗</a>
-      </div>
-    </div>
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image"> <img src="Images/meat.png"></div>
-      <div class="project-content">
-        <h3 class="project-title">Meatery</h3>
-        <p class="project-description">
-          Meatery is a mobile app designed to streamline the online meat shopping experience, offering fresh, high-quality meat products delivered straight to customers' doorsteps. The goal was to create an intuitive, visually appealing, and user-friendly interface that enhances the online meat-buying journey while ensuring trust, convenience, and efficiency.
-        </p>
-        <p class="project-description">
-          <strong>About Meatery:</strong> One of my friend a freelance developer requested to design this app according to wireframe provided by him. Actual client is from UAE details not available for me.
-        </p>
-        <a href="#" class="view-project-btn">View Project ↗</a>
-      </div>
-    </div>
-    <div class="project-card" data-aos="fade-up">
-      <div class="project-image"> <img src="Images/tulip.png"></div>
-      <div class="project-content">
-        <h3 class="project-title">Tulips a conceptual project</h3>
-        <p class="project-description">
-        Tulips a project i have done for students learning flutter and Mobile App. development. The project is based on beauty and cosmetic theme.
-        </p>
-        <p class="project-description">
-          <strong>About Tulips</strong>A conceptual project for Students,Client is actually a flutter developer who is a mentor for students learning flutter 
-        </p>
-        <a href="#" class="view-project-btn">View Project ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <h4 class="testimonial-label">Testimonials</h4>
-    <h2 class="testimonial-heading">What Clients Say</h2>
-    
-    <div class="testimonial-container">
-      <div class="testimonial-track">
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Working with Anand was a pleasure. His attention to detail and creative approach brought our vision to life perfectly."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="Images/Sreeyettan.jpg" alt="Client" />
-            <div class="author-info">
-              <h4>Sreejith Murali</h4>
-              <p>Sr.Flutter Developer, Luminar Technolab</p>
-            </div>
-          </div>
+    <div id="scroll-container" data-scroll-container>
+    <div class="custom-cursor" id="custom-cursor" aria-hidden="true"></div>
+    <header class="site-header" data-scroll-section>
+        <div class="container nav">
+            <a class="logo" href="#home">Anand Narayanan</a>
+            <nav class="main-nav">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let’s talk</button>
         </div>
+    </header>
 
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"The UI/UX design exceeded our expectations. Anand's work significantly improved our user engagement."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="Images/gop.png" alt="Client" />
-            <div class="author-info">
-              <h4>Gopu V</h4>
-              <p>GM,Spintech Fittings</p>
+    <main id="home" class="hero" data-scroll-section>
+        <div class="container hero-grid">
+            <div class="hero-copy" data-scroll data-scroll-speed="1">
+                <p class="eyebrow">Hi! I am</p>
+                <h1>
+                    <span class="light" data-scroll data-scroll-speed="1.2">The</span>
+                    <span class="bold" data-scroll data-scroll-speed="1.1">humble</span><br>
+                    <span class="accent" data-scroll data-scroll-speed="1.3">UX/UI</span>
+                    <span class="bold" data-scroll data-scroll-speed="1.2">Designer.</span>
+                </h1>
+                <p class="sub">I craft clean, modern interfaces and delightful user experiences.</p>
+                <div class="actions">
+                    <a href="#work" class="btn primary">View work</a>
+                    <a href="#contact" class="btn ghost">Hire me</a>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-content">
-            <p>"Anand sir's mentorship was a game-changer in my UI/UX learning phase. He pushed my UI/UX skills further in weeks than I could've alone in months. His blend of expertise, patience, and advices are unmatched."</p>
-          </div>
-          <div class="testimonial-author">
-            <img src="Images/amal.jpg" alt="Client" />
-            <div class="author-info">
-              <h4>Amalnath</h4>
-              <p>UI/UX Designer</p>
+            <div class="hero-image-wrap" data-scroll data-scroll-speed="-1.2">
+                <img src="Images/and.png" alt="Portrait" class="hero-image">
+                <!--<button class="play" aria-label="Play intro video" >
+                    <span class="triangle"></span>
+                </button>-->
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+        <a href="#services" class="scroll-indicator" aria-label="Scroll to services" data-scroll data-scroll-speed="0.8">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </main>
 
-  <section class="contact-section">
-    <h4 class="contact-label">Contact</h4>
-    <h2 class="contact-heading">Interested in working together<br>or discussing a project?</h2>
-    <div class="contact-buttons">
-      <a href="mailto:anandnofficial@gmail.com" class="btn light">Drop a mail</a>
-      <a href="https://wa.me/919645754762" target="_blank" class="btn dark">WhatsApp</a>
-    </div>
-  </section>
+    <section id="services" class="section" data-scroll-section>
+        <div class="container">
+            <p class="section-tag">Service</p>
+            <h2 class="section-title">What I do</h2>
+            <div class="cards">
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="0.4" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>UI/UX Design</h3>
+                    <ul>
+                        <li>User Research & Heuristic Evaluation</li>
+                        <li>Wireframing & Prototyping (Low‑fi & High‑fi)</li>
+                        <li>Responsive Web & Mobile Design</li>
+                        <li>Usability Testing & Iteration</li>
+                    </ul>
+                </article>
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="-0.2" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>Web & App Design</h3>
+                    <ul>
+                        <li>Landing Page Design (Parallax/Modern UI)</li>
+                        <li>Mobile App Interfaces (iOS & Android)</li>
+                        <li>Design Systems & Style Guides</li>
+                        <li>Interactive Prototyping</li>
+                    </ul>
+                </article>
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="0.3" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>Product Strategy & UX Consulting</h3>
+                    <ul>
+                        <li>UX Audit for Existing Products</li>
+                        <li>Conversion Optimization</li>
+                        <li>Design Thinking Workshops</li>
+                        <li>Idea‑to‑MVP Guidance</li>
+                    </ul>
+                </article>
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="-0.1" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>Teaching & Mentorship</h3>
+                    <ul>
+                        <li>UI Design Training (Beginner → Advanced)</li>
+                        <li>Portfolio Building Guidance</li>
+                        <li>1:1 Mentorship for Aspiring Designers</li>
+                        <li>Design Career Coaching</li>
+                    </ul>
+                </article>
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="0.2" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>Entrepreneurial Services (Allied Techminds)</h3>
+                    <ul>
+                        <li>Web Development</li>
+                        <li>SEO & Digital Marketing</li>
+                        <li>Branding & Visual Identity</li>
+                        <li>Startup UX/UI Consultation</li>
+                    </ul>
+                </article>
+                <article class="card holographic-card reveal" data-scroll data-scroll-speed="-0.3" data-scroll-class="inview" data-scroll-repeat>
+                    <h3>Branding & Creative Direction</h3>
+                    <ul>
+                        <li>Logo & Visual Identity Design</li>
+                        <li>Typography & Color Strategy</li>
+                        <li>Marketing Collateral (Brochures, Posters, Social Media)</li>
+                        <li>Consistent Brand Experience Across Digital Products</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p>Made with ❤️ by Anand Narayanan</p>
-      <p>Powered by ChatGPT</p>
-      <p>© 2025 All rights reserved</p>
-    </div>
-  </footer>
+    <section id="about" class="section muted" data-scroll-section>
+        <div class="container about">
+            <div>
+                <div class="about-grid" style="display: flex; align-items: flex-start; gap: 2rem;">
+                    <img src="Images/abt.png" alt="About me" style="width:180px; max-width:100%; border-radius:1rem; box-shadow:0 4px 24px rgba(0,0,0,0.08); flex-shrink:0;">
+                    <div>
+                        <h2 class="section-title">About me</h2>
+                <p>Design, for me, is more than visuals — it’s about solving problems and making life easier for people. I’m Anand Narayanan, a UI/UX Designer and trainer who loves turning complex ideas into simple, delightful experiences. Over the past 5 years, I’ve designed products, guided students into the design world, and built my own venture, Allied Techminds, where creativity meets technology.</p>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    function handleParallax() {
-      const cards = document.querySelectorAll('.service-card');
-      let ticking = false;
+    <section id="work" class="section" data-scroll-section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Selected work</h2>
+                <a href="https://www.behance.net/anandn4" target="_blank" rel="noopener noreferrer" class="btn ghost small" aria-label="View more work on Behance">View more</a>
+            </div>
+            <div class="grid thumbs">
+                <div class="thumb reveal" aria-label="Meat project" style="background-image:url('Images/meat.png')" data-scroll data-scroll-speed="-0.6" data-scroll-class="inview" data-scroll-repeat>
+                    <span class="thumb-label">Meatery</span>
+                </div>
+                <div class="thumb reveal" aria-label="Tulip project" style="background-image:url('Images/tulip.png')" data-scroll data-scroll-speed="0.3" data-scroll-class="inview" data-scroll-repeat>
+                    <span class="thumb-label">Tulip</span>
+                </div>
+                <div class="thumb reveal" aria-label="Anti project" style="background-image:url('Images/anti.png')" data-scroll data-scroll-speed="-0.2" data-scroll-class="inview" data-scroll-repeat>
+                    <span class="thumb-label">Anti Drug Pledge</span>
+                </div>
+                <div class="thumb reveal" aria-label="Consultancy project" style="background-image:url('Images/consltncy.png')" data-scroll data-scroll-speed="0.4" data-scroll-class="inview" data-scroll-repeat>
+                    <span class="thumb-label">Education Consultancy</span>
+                </div>
+                <div class="thumb reveal" aria-label="Health project" style="background-image:url('Images/health.png')" data-scroll data-scroll-speed="-0.4" data-scroll-class="inview" data-scroll-repeat>
+                    <span class="thumb-label">Health Link</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      function updateParallax() {
-        const scrollY = window.scrollY;
-        cards.forEach((card, index) => {
-          const offset = (index % 2 === 0 ? 1 : -1) * (scrollY * 0.03);
-          card.style.transform = `translateY(${offset}px)`;
-        });
-        ticking = false;
-      }
+    <footer id="contact" class="footer" data-scroll-section>
+        <div class="container footer-grid">
+            <div>
+                <h2 class="section-title">Let’s build something great</h2>
+                <p class="sub">Email: <a href="mailto:anandnofficial@gmail.com">anandnofficial@gmail.com</a></p>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! I will get back to you soon.');">
+                <input type="text" placeholder="Your name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Tell me about your project" rows="4" required></textarea>
+                <button type="submit" class="btn primary full">Send message</button>
+            </form>
+        </div>
+        <p class="copyright">© <span id="year"></span> Anand Narayanan. All rights reserved.</p>
+    </footer>
 
-      if (window.innerWidth > 768) {
-        window.addEventListener('scroll', () => {
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              updateParallax();
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const links = document.querySelectorAll('.main-nav a');
+        const onScroll = () => {
+            const fromTop = window.scrollY + 100;
+            links.forEach(link => {
+                const section = document.querySelector(link.getAttribute('href'));
+                if (!section) return;
+                if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+                    links.forEach(l=>l.classList.remove('active'));
+                    link.classList.add('active');
+                }
             });
-            ticking = true;
-          }
-        });
-      }
-    }
+        };
+        document.addEventListener('scroll', onScroll, { passive: true });
 
-    window.addEventListener('load', handleParallax);
-    window.addEventListener('resize', handleParallax);
-
-    document.addEventListener('mousemove', (e) => {
-      const dot = document.createElement('div');
-      dot.classList.add('trail-dot');
-      dot.style.left = `${e.clientX}px`;
-      dot.style.top = `${e.clientY}px`;
-      document.body.appendChild(dot);
-
-      setTimeout(() => {
-        dot.remove();
-      }, 100);
-    });
-
-    tsParticles.load("tsparticles", {
-      particles: {
-        number: {
-          value: 10,
-          density: {
-            enable: true,
-            area: 800
-          }
-        },
-        shape: {
-          type: "image",
-          image: [
-            { src: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png", width: 32, height: 32 },
-            { src: "https://cdn-icons-png.flaticon.com/512/681/681662.png", width: 32, height: 32 },
-            { src: "https://cdn-icons-png.flaticon.com/512/1087/1087927.png", width: 32, height: 32 },
-            { src: "https://cdn-icons-png.flaticon.com/512/1205/1205526.png", width: 32, height: 32 },
-            { src: "https://cdn-icons-png.flaticon.com/512/1055/1055666.png", width: 32, height: 32 },
-            { src: "https://cdn-icons-png.flaticon.com/512/681/681662.png", width: 32, height: 32 }
-          ]
-        },
-        opacity: {
-          value: 0.3
-        },
-        size: {
-          value: 18,
-          random: true
-        },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          outModes: {
-            default: "out"
-          }
+        // Initialize Locomotive Scroll
+        try {
+            const scroll = new LocomotiveScroll({
+                el: document.querySelector('#scroll-container'),
+                smooth: true,
+                lerp: 0.08,
+                smartphone: { smooth: true },
+                tablet: { smooth: true }
+            });
+        } catch (e) {
+            // Fallback gracefully if CDN fails
+            console.warn('Locomotive Scroll unavailable:', e);
         }
-      },
-      interactivity: {
-        events: {
-          onHover: {
-            enable: true,
-            mode: "repulse"
-          },
-          resize: true
-        },
-        modes: {
-          repulse: {
-            distance: 60,
-            duration: 0.8
-          }
-        }
-      },
-      background: {
-        color: "#ffffff"
-      },
-      detectRetina: true
-    });
 
-    function toggleMenu() {
-      const nav = document.getElementById('mobileNav');
-      nav.classList.toggle('active');
-    }
-  </script>
+        // Custom glassmorphic cursor with slight lag
+        (function(){
+            const cursor = document.getElementById('custom-cursor');
+            if(!cursor) return;
+            const prefersFinePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+            if(!prefersFinePointer) { cursor.style.display='none'; return; }
+
+            document.documentElement.classList.add('cursor-enabled');
+
+            let targetX = window.innerWidth/2, targetY = window.innerHeight/2;
+            let currentX = targetX, currentY = targetY;
+            const lerp = (a,b,t)=>a+(b-a)*t;
+
+            window.addEventListener('mousemove', (e)=>{
+                targetX = e.clientX; targetY = e.clientY;
+            }, { passive:true });
+
+            const tick = ()=>{
+                currentX = lerp(currentX, targetX, 0.18);
+                currentY = lerp(currentY, targetY, 0.18);
+                cursor.style.transform = `translate3d(${currentX - cursor.offsetWidth/2}px, ${currentY - cursor.offsetHeight/2}px, 0)`;
+                requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+
+            const enlargeTargets = Array.from(document.querySelectorAll('.card, .btn'));
+            enlargeTargets.forEach(el=>{
+                el.addEventListener('mouseenter', ()=> cursor.classList.add('large'));
+                el.addEventListener('mouseleave', ()=> cursor.classList.remove('large'));
+            });
+        })();
+    </script>
+    </div>
 </body>
 </html>
+
